@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Become Zen with me</title>
+    <link rel="stylesheet" href="{% static 'stylesheet.css' %}"/>
+  </head>
+  <body>
+    <div class="midAlignment">
+      <img src="{% static 'logo.svg' %}" id="logo" />
+    </div>
+    <div class="circle waves-start">
+      Become Zen With Me
+      <div class="waves-start">
+      </div>
+    </div>
+    <div>
+      <video id="webcam">
+        
+      </video>
+      <audio autoplay>
+        <source src="{% static 'river.mp3' %}" type="audio/mp3">
+      </audio>
+    </div>
+    <script src="{% static 'script.js' %}">
+        
+    </script>
+  </body>
+</html>

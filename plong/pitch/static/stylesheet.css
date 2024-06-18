@@ -1,0 +1,70 @@
+/* CSS reset template provided by JoshwComeau*/
+* { 
+  margin:0;
+}
+
+
+/* Added code by me*/
+body {
+  background-color:#345C98;
+}
+
+.midAlignment{
+  margin-left: 36vw;
+  margin-top: 40vh;
+  display: block;
+  position: fixed;
+  user-select:none;
+}
+
+#logo{
+  width:33vw;
+  height:10vh;
+}
+
+.circle {
+  height: 33vh;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position:fixed;
+  display: inline-block;
+  background-color: white;
+  text-align: center;
+  line-height: 33vh;
+  user-select: none;
+  margin-left: 40vw;
+  margin-top:35vh; 
+}
+
+@keyframes motions{
+  0% {background-image: url('./layered-waves-haikei.svg'); background-position: center;}
+  33% {background-position:0 80%;}
+  66% {background-image: url('./stacked-waves-haikei.svg'); background-repeat: repeat; transform:translate(0 50px)}
+  100% {background-image: url('./stacked-waves-haikei.svg'); color:white;}
+}
+
+@keyframes rotation{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.waves-start { 
+  background-image: url('./layered-waves-haikei.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  position:fixed;
+  animation-name: motions;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.rotating{
+  animation: rotation 3s ease-in-out infinite;
+}
+
