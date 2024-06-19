@@ -38,20 +38,10 @@ body {
 
 @keyframes motions{
   0% {background-image: url('./layered-waves-haikei.svg'); background-position: center;}
-  33% {background-position:0 80%;}
+  33% {background-position:0 100%;}
   66% {background-image: url('./stacked-waves-haikei.svg'); background-repeat: repeat; transform:translate(0 50px)}
   100% {background-image: url('./stacked-waves-haikei.svg'); color:white;}
 }
-
-@keyframes rotation{
-  from{
-    transform: rotate(0deg);
-  }
-  to{
-    transform: rotate(360deg);
-  }
-}
-
 .waves-start { 
   background-image: url('./layered-waves-haikei.svg');
   background-repeat: no-repeat;
@@ -64,7 +54,5 @@ body {
   animation-timing-function: ease-in-out;
 }
 
-.rotating{
-  animation: rotation 3s ease-in-out infinite;
-}
+
 
