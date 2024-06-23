@@ -34,17 +34,18 @@ body {
 }
 
 .circle {
-  height: 33vh;
+  height: 50vh;
   aspect-ratio: 1/1;
   border-radius: 50%;
   position:fixed;
   display: inline-block;
   background-color: white;
   text-align: center;
-  line-height: 33vh;
+  line-height: 50vh;
   user-select: none;
-  margin-left: 40vw;
-  margin-top:35vh; 
+  margin-left: 38vw;
+  margin-top:30vh; 
+  font-size: 4vh;
 }
 
 @keyframes motions{

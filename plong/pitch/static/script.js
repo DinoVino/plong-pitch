@@ -38,46 +38,11 @@ async function playAudio(){
   audio.volume = 0;
   var maxVolume = 0.1;
   // Rewrite this nested function to a dedicated piece of code for beauty
-  setInterval(function() {if(audio.volume < maxVolume){ audio.volume = audio.volume + 0.01; console.log(audio.volume); audio.play();}},250) 
-  audio.loop = true;
-  
-  // Code might be obsolete after websocket/django channels implementation  
-  var canvas = document.getElementById("TempImage");
-  var context = canvas.getContext("2d");
-  var feed = document.getElementById("feed");
-  // var mediaDevices = navigator.mediaDevices;
-  // feed.muted = true; 
-
-  // mediaDevices
-  //   .getUserMedia({
-  //      video: true,
-  //      audio: false,
-  //    })
-  //   .then((stream) =>{
-  //     feed.srcObject = stream;
-  //     feed.play();
-  //     var width = feed.width;
-  //     var height = feed.height;
-  //     var delay = 250;
-  //     var quality = 0.7;
-
-  //     // rewrite the code, blob is empty due to HTML5 changes
-  //     setInterval(() => {
-  //       context.drawImage(feed, 0, 0, width, height);
-  //       canvas.toBlob((blob) =>{
-  //         if(ws.readyState == WebSocket.OPEN){
-  //           if(mode ==true){
-  //             ws.send(new Uint8Array([]));
-  //           }else{
-  //             ws.send(blob);
-  //           }
-  //         }
-  //       }, 'image/jpeg', quality)
-  //     }, delay);
-  //   })
-  //   .catch(alert);
-  await readVideo();
+  setInterval(function() {if(audio.volume < maxVolume){ audio.volume = audio.volume + 0.001; console.log(audio.volume); audio.play();}},250) 
+  audio.loop = true; 
   Mode();
+  await readVideo();
+  changeTextTest();
 
 }
 
@@ -91,9 +56,9 @@ async function readVideo()
     webcamVideoTag.srcObject = stream;
     webcamVideoTag.play();
     const videoTrack = stream.getVideoTracks()[0];
-    const trackProcessor = new MediaStreamTrackProcessor({ track: videoTrack });
+
     const quality = 0.7;
-    const reader = trackProcessor.readable.getReader();
+
     img = new ImageCapture(videoTrack);
     setInterval(() => {
       img.grabFrame()
@@ -117,7 +82,10 @@ async function readVideo()
 
 }
 
-  
+function changeTextTest(){
+  let text = document.getElementById("guided-meditation");
+  text.innerHTML= "Very Zen, Much Wow";
+}
   
 
 
