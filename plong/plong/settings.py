@@ -25,14 +25,14 @@ SECRET_KEY = 'django-insecure-!r41*g1-a&wi!(z2$g6)sjqmcgi!d*e3hni5s$n1&ynj9g4fwh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["vercel.app",]
+ALLOWED_HOSTS = ["vercel.app","127.0.0.1"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'daphne',
     'channels',
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'plong.wsgi.application'
+# WSGI_APPLICATION = 'plong.wsgi.application'
 
 
 # Database
