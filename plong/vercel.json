@@ -1,7 +1,7 @@
 { 
   "builds":[
     {
-      "src":"plong/plong/asgi.py",
+      "src":"/plong/asgi.py",
       "use":"@vercel/python",
       "config":{"maxLambdaSize":"15mb", "runtime":"python3.12"}
     },
@@ -16,12 +16,12 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "plong/plong/asgi.py"
+      "dest": "plong/asgi.py"
     },
     {
       "src":"/static/(.*)",
       "dest":"/static/$1"
     }
   ],
-  "outputDirectory":"plong/pitch/static"
+  "outputDirectory":"pitch/static"
 }
