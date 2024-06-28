@@ -1,15 +1,14 @@
-{
-
-  "routes": [
-
+{ 
+  "builds":[
     {
-
-      "src": "/(.*)",
-
-      "dest": "plong/asgi.py"
-
+      "src":"/plong/plong/asgi.py",
+      "use":"@vercel/python"
     }
-
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "plong/asgi.py"
+    }
   ]
-
 }
