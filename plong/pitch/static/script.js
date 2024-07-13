@@ -1,5 +1,3 @@
-// console.log("hello world")
-
 // Setting variables
 var mode = true;
 var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
@@ -9,17 +7,19 @@ const ws = new WebSocket(
 const frames = [];
 const canvas = document.getElementById("TempImage");
 const context = canvas.getContext("2d");
+var incomingMessage = "";
 
 function Mode(){
   if (mode == true){
     mode = false;
     
-    ws.onopen = (event) =>{
+    ws.onopen = (event) => {
       console.log('Opened!');
     };
 
     ws.onmessage = (event) => {
-      console.log(event.data);
+      incomingMessage = event.data;
+      console.log(incomingMessage);
     };
 
     ws.onclose = (event) => {
@@ -77,14 +77,31 @@ async function readVideo()
       });
     },500); 
     
+    setInterval(()=>{
+        changeTextTest(incomingMessage);
+      },5000);
 
     });
 
 }
 
-function changeTextTest(){
+function changeTextTest(_incomingMessage){
   let text = document.getElementById("guided-meditation");
-  text.innerHTML= "Very Zen, Much Wow";
+  switch(_incomingMessage){
+    case _incomingMessage = "angry":
+      text.innerHTML = "Take a deep breath";
+      break;
+
+    case _incomingMessage = "neutral":
+      text.innerHTML = "Hold on to this feeling, keep it going";
+      break;
+    case _incomingMessage = "happy":
+      text.innerHTML = "Close your eyes";
+      break;
+
+    default:
+      text.innerHTML = "Listen to the water";
+  }
 }
   
 
